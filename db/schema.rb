@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141118170824) do
   create_table "items", force: true do |t|
     t.string   "title"
     t.string   "description"
+    t.text     "url"
     t.integer  "likes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -36,5 +37,7 @@ ActiveRecord::Schema.define(version: 20141118170824) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
 end
