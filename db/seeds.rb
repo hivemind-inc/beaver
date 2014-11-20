@@ -8,9 +8,9 @@ item6 = Item.create({title: "soft po", url: "http://lorempixel.com/640/640/cats/
 
 item7 = Item.create({title: "shalom po", url: "http://lorempixel.com/640/640/cats/", description: "a lovely day"})
 item8 = Item.create({title: "candy po", url: "http://lorempixel.com/640/640/cats/", description: "a lovely day"})
-item9 = Item.create({title: "laughing po", url: "http://lorempixel.com/640/640/cats/", description: "a lovely day"})
 
 item1.tags << Tag.create(name: "bacon")
+item1.tags << Tag.create(name: "crispy")
 item2.tags << Tag.create(name: "cats")
 item3.tags << Tag.create(name: "candy")
 
@@ -20,4 +20,6 @@ item6.tags << Tag.where(name: "candy")
 
 item7.tags << Tag.where(name: "bacon")
 item8.tags << Tag.where(name: "cats")
-item9.tags << Tag.where(name: "candy")
+
+Category.create(name: "squatspo").items << [item1, item2, item3, item4]
+Category.create(name: "cabinpo").items << [item5, item6, item7, item8]
